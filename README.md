@@ -6,8 +6,7 @@ Started as a joke, now becoming reality and I attemt to render an image in the a
 
 # First steps
 I am working on MacOSX so my choice fell on using nasm (https://www.nasm.us/) as my assembler ``brew install nasm``. After that  I went to the terminal and created a folder with a ``hello.asm``file in it.
-
-``
+```assembly
 ; Hello World in assembly language
 ; Matthias Jäger 
 ;
@@ -51,4 +50,4 @@ start
 	; Error code 0	
 	push dword 0
 	int 0x80
-``
+```
