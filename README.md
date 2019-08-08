@@ -51,3 +51,18 @@ start
 	push dword 0
 	int 0x80
 ```
+
+## Building the object code file
+``sh nasm -f macho hello_world.asm``
+
+# Compile the "Hello World!" program
+``sh ld -static -o hello_world.o -e start hello_world.o``
+
+# Run the program 
+``sh ./hello_world.o``
+
+# Outputs
+``
+➜  HelloWorld ./hello_world.o 
+Hello World!
+```
