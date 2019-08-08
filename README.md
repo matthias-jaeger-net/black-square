@@ -66,3 +66,6 @@ start
 ➜  HelloWorld ./hello_world.o 
 Hello World!
 ```
+
+# After setting up this program I aim for the next steps
+Pulling first an example code from this 
