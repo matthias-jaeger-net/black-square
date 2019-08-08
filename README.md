@@ -62,7 +62,7 @@ start
 ``sh ./hello_world.o``
 
 # Outputs
-``
+```sh
 ➜  HelloWorld ./hello_world.o 
 Hello World!
 ```
