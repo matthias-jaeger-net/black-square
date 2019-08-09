@@ -5,7 +5,7 @@ An assembly language program recreating Kazimir Malevich's Black Square with a p
 Started as a joke, now becoming reality and I attemt to render an image in the assembly languge. I know nothing about assembly but see this as a coding challenge where I build upon resouces from the web, that I document here
 
 ## First steps: "Hello World!"
-I am working on MacOSX so my choice fell on using nasm (https://www.nasm.us/) as my assembler ``brew install nasm``. After that  I went to the terminal and created a folder with a ``hello.asm``file in it.
+I am working on MacOSX so my choice fell on using nasm (https://www.nasm.us/) as my assembler ``brew install nasm``. After that  I went to the terminal and created a folder with a ``hello.asm`` file in it.
 
 ### x86 nasm assembly code
 ```assembly
@@ -72,7 +72,7 @@ Hello World!
 ```
 
 ## After setting up this program I aim for the next steps
-Pulling first an example code from this stack overflow discussion (https://stackoverflow.com/questions/10345125/how-to-open-and-draw-an-image-in-assembly) from Rommel Samanez. I haven't compiled it yet, but if this works I should be able to simplify it to write just a black square image.
+Pulling first an example code from this stack overflow discussion (https://stackoverflow.com/questions/10345125/how-to-open-and-draw-an-image-in-assembly) from Rommel Samanez. I haven't compiled it yet, but if this works I should be able to simplify it to write just a black square image. Tried compiling and failed. Maybe it supports a different system architecture than I have. I'm not sure but it uses ``elf64`` as a target (https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) which is different from the ``hello.asm`` using the ``macho`` as target. Reading more on Wikipedia and let this go for the moment.  
 ```assembly
 ; Program to draw lines to 1000x1000 Bitmap File
 ; Compile with:
@@ -227,6 +227,21 @@ _start:
     mov rdi,0
     syscall
 ```
+
+## Things I would need in general
+* *.DATA SECTION
+* Store the filename 
+* Store the length of the filename
+* Store the value of "Black"
+* Store 
+### Open a file
+### Write data to a file
+#### Explain to the computer what "black" means
+#### Make a process that writes a single black pixel
+### 
+### Close the file
+### Clean up the mess 
+### Exit the program
 
 
 ## Research links
