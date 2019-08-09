@@ -57,15 +57,15 @@ start
 ```
 
 ### Building the object code file
-``sh nasm -f macho hello_world.asm``
+``nasm -f macho hello_world.asm``
 
-### Compile the "Hello World!" program
-``sh ld -static -o hello_world.o -e start hello_world.o``
+### Link the "Hello World!" program
+``ld -static -o hello_world.o -e start hello_world.o``
 
-### Run the program 
-``sh ./hello_world.o``
+### Run the executable program 
+``./hello_world.o``
 
-### Outputs
+### Console output
 ```sh
 ➜  HelloWorld ./hello_world.o 
 Hello World!
