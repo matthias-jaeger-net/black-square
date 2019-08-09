@@ -72,7 +72,7 @@ Hello World!
 ```
 
 ## After setting up this program I aim for the next steps
-Pulling first an example code from this stack overflow discussion (https://stackoverflow.com/questions/10345125/how-to-open-and-draw-an-image-in-assembly) from Rommel Samanez. I haven't compiled it yet, but if this works I should be able to simplify it to write just a black square image. Also 
+Pulling first an example code from this stack overflow discussion (https://stackoverflow.com/questions/10345125/how-to-open-and-draw-an-image-in-assembly) from Rommel Samanez. I haven't compiled it yet, but if this works I should be able to simplify it to write just a black square image.
 ```assembly
 ; Program to draw lines to 1000x1000 Bitmap File
 ; Compile with:
