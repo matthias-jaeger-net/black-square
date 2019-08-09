@@ -229,19 +229,28 @@ _start:
 ```
 
 ## Things I would need in general
-* *.DATA SECTION
-* Store the filename 
-* Store the length of the filename
-* Store the value of "Black"
-* Store 
-### Open a file
-### Write data to a file
-#### Explain to the computer what "black" means
-#### Make a process that writes a single black pixel
-### 
-### Close the file
-### Clean up the mess 
-### Exit the program
+### .data section
+* Store the filename (db) "square.bmp" 
+* Store the length of the filename (equ) $-filename 
+* Store the value of "Black" (Not sure how, but in general it should be 0x00000000?) 
+* Store the total ammount of pixels as a integer number, should be 1 for a 1x1 pixel bmp
+* Store the magic number of a bmp file 
+* Store all of the other header infos that belong in a bmp file
+* Store the SYS call to open and write to a file
+
+### .text section
+* Create a process that writes a single black pixel to a x, y position in an image
+* Create a process that combines what I need
+* * Push the length of the filename on the stack
+* * Push the char buffer of the filename on the stack
+* * Push 1 - not sure why
+* * Call my pixel process?
+* Close the file
+* Clean up the mess and move the $ stack pointer back to it's value (Means I've to calculate how many times I pushed something on the stack add all of those together and add this to th ``esp``(Stack base pointer)
+* Push a 0 on the first postion of the stack
+* Push the SYS command to exit (1) on the stack
+* Interrupt the execution of my program (int 0x80)
+* Exit the program
 
 
 ## Research links
