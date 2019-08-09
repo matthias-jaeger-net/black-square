@@ -1,11 +1,13 @@
 # black-square
 An assembly language program recreating Kazimir Malevich's Black Square with a pixel image
 
-# What is this?
+## What is this?
 Started as a joke, now becoming reality and I attemt to render an image in the assembly languge. I know nothing about assembly but see this as a coding challenge where I build upon resouces from the web, that I document here
 
-# First steps
+## First steps: "Hello World!"
 I am working on MacOSX so my choice fell on using nasm (https://www.nasm.us/) as my assembler ``brew install nasm``. After that  I went to the terminal and created a folder with a ``hello.asm``file in it.
+
+### x86 nasm assembly code
 ```assembly
 ; Hello World in assembly language
 ; Matthias Jäger 
@@ -16,7 +18,9 @@ I am working on MacOSX so my choice fell on using nasm (https://www.nasm.us/) as
 section .data
 	; adress = bytes of textual data as ASCII hexadecimal, linebreak	
 	message db "Hello World!", 0x0a 
-	; calculate the length of the text based on adresses
+	; calculate the length of the text based on adresses 
+	; I think $ represents the current adress of the stacks start
+	; subtracting message_length from that will offset it by 13 positions
 	message_length equ $-message
 ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;
 ; Program logic
@@ -52,23 +56,23 @@ start
 	int 0x80
 ```
 
-## Building the object code file
+### Building the object code file
 ``sh nasm -f macho hello_world.asm``
 
-# Compile the "Hello World!" program
+### Compile the "Hello World!" program
 ``sh ld -static -o hello_world.o -e start hello_world.o``
 
-# Run the program 
+### Run the program 
 ``sh ./hello_world.o``
 
-# Outputs
+### Outputs
 ```sh
 ➜  HelloWorld ./hello_world.o 
 Hello World!
 ```
 
-# After setting up this program I aim for the next steps
-Pulling first an example code from this stack overflow discussion (https://stackoverflow.com/questions/10345125/how-to-open-and-draw-an-image-in-assembly) from Rommel Samanez. 
+## After setting up this program I aim for the next steps
+Pulling first an example code from this stack overflow discussion (https://stackoverflow.com/questions/10345125/how-to-open-and-draw-an-image-in-assembly) from Rommel Samanez. I haven't compiled it yet, but if this works I should be able to simplify it to write just a black square image. Also 
 ```assembly
 ; Program to draw lines to 1000x1000 Bitmap File
 ; Compile with:
@@ -223,3 +227,8 @@ _start:
     mov rdi,0
     syscall
 ```
+
+
+## Research links
+* A Mandelbrot set image in wasm (Web Assembly) on a html page
+* https://medium.com/@alexc73/programming-using-web-assembly-c4c73a4e09a9
